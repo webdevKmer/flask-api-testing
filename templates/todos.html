@@ -16,19 +16,16 @@
         <a href="/comments">Comments</a>
         <a href="/photos">Photos</a>
     </nav>
-    <h1>List of Users</h1>
+    <h1>List of Todos {{ nbr_todos }}</h1>
     <hr>
-    {% for user in users %}
-    <h3>{{ user.name }}</h3>
-    <h3>{{ user.username }}</h3>
-    <h4>{{ user.email }}</h4>
-    <h5>{{ user.address.city }}</h5>
-    <h5>{{ user.address.street }}</h5>
-    <h5>{{ user.address.suite }}</h5>
-    <h5>{{ user.address.zipcode }}</h5>
-    <h5>{{ user.address.geo.lat }}</h5>
-    <h5>{{ user.address.geo.long }}</h5>
+    {% for todo in todos %}
+    {% if not todo.completed %}
+    <h3>{{ todo.userId }}</h3>
+    <h3>{{ todo.title }}</h3>
+    <h5>{{ todo.id }}</h5>
+    <h5>{{ todo.completed }}</h5>
     <hr>
+    {% endif %}
     {% endfor %}
 
     <footer>written by me and for my people</footer>
