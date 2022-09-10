@@ -21,8 +21,8 @@
     {% for photo in photos %}
     <h3>{{ photo.title }}</h3>
     <h3>{{ photo.id }}</h3>
+    <img src="{{ photo.url }}" alt="">
     <img src="{{ photo.thumbnailUrl }}" alt="">
-    <h5>{{ photo.url }}</h5>
     <h5>{{ photo.albumId }}</h5>
     <hr>
     {% endfor %}
